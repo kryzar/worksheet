@@ -4,8 +4,8 @@ LaTeX template for the UCalgary Math211 weekly worksheets. Work in progress.
 
 ## Basics
 
-See the [example.tex](/exampl/example.tex) as an example, and the resulting PDF
-files [example.pdf](/example/example.pdf) and
+See the [example.tex](/example/example.tex) as an example, and the resulting
+PDF files [example.pdf](/example/example.pdf) and
 [example.SOLUTIONS.pdf](/example/example.SOLUTIONS.pdf).
 
 ## Automatic compilation
