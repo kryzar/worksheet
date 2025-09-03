@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# worksheet
+#
+# Usage: worksheet my_file.tex
+
+# Stop in case of errors:
+set -e
+
+# Find or create a workdir:
+source=$1
+truedir=$(pwd)
+prefix=$(basename $source | sed 's/\.[^.]*$//') # (One could also use `rev` and `cut`...)
+workdir=$(find /tmp -maxdepth 1 -type d -name worksheet.${prefix}.* | head -n 1)
+if [ -z $workdir ]; then
+    workdir=$(mktemp -d /tmp/worksheet.${prefix}.XXXXXX)
+else
+    echo "Found a workdir (there may be others)"
+fi
+echo "Working in $workdir"
+  
+# Copy the files and create a solutions and a no-solutions version:
+cp $source $workdir/solutions.tex
+cp $source $workdir/exercises.tex
+cd $workdir
+sed -i 's/^\\documentclass.*/\\documentclass[solutions]{worksheet}/' solutions.tex
+sed -i 's/^\\documentclass.*/\\documentclass{worksheet}/' exercises.tex
+
+# Compile everything
+latexmk -pdf solutions.tex
+latexmk -pdf exercises.tex
+
+# Put the files in the right dir
+cp exercises.pdf $truedir/$prefix.pdf
+cp solutions.pdf $truedir/$prefix.SOLUTIONS.pdf
+
+# Bye bye!
+cd -
+echo "Done"

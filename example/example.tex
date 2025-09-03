@@ -1,0 +1,79 @@
+\documentclass[solutions]{worksheet}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+
+\coursename{Galois Theory}
+\semester{Fall 2025}
+\weeknumber{1}
+\worksheetnumbertotal{3}
+\worksheetnumber{1}
+
+\begin{document}
+
+\begin{exercise}
+
+  This is a very simple exercise. It doesn't have any sub-question.
+  Is $57$ prime?
+
+\end{exercise}
+
+\begin{solution}
+
+  Yes.
+
+\end{solution}
+
+\begin{exercise}
+
+  This exercise has multiple sub-questions.
+  
+  \begin{questions}
+
+    \question Give an explicit algebraic formula for $\cos \frac {2\pi} {17}$.
+
+    \question Find a polynomial of which $\cos \frac \pi {17}$ is a root.
+
+  \end{questions}
+
+  These identities allowed Gau{\ss} to draw a \emph{heptadecagon} (polygon with
+  seventeen sides) from a ruler-and-compass construction.
+
+  \begin{questions}
+
+    \question Can all polygons be thus obtained?
+
+  \end{questions}
+
+\end{exercise}
+
+\begin{solution}
+
+  These questions are related to some of the oldest problems in Mathematics.
+  The problem of building a heptadecagon solely using a ruler and a compass was
+  open for centuries. The first solution is due to Gau{\ss}. It was published
+  in 1796 in his famous \emph{Disquisitiones arithmeticae}.
+
+  \begin{answers}
+
+    \answer We have
+      \begin{align*}
+        \cos\frac{2\pi}{17} = &   \frac{1}{16}\left(\sqrt{17}-1+\sqrt{34-2\sqrt{17}}\right)\\
+                              & + \frac{1}{8} \left(\sqrt{17+3\sqrt{17}
+                                                          - \sqrt{34-2\sqrt{17}}
+                                                          - 2\sqrt{34+2\sqrt{17}}} \right).\\
+      \end{align*}
+
+    \answer One of the roots of
+      \begin{align*}
+        & 32768 X^{16} - 131072 X^{14} + 212992 X^{12} - 180224 X^{10} \\
+        & + 84480 X^8 - 21504 X^6 + 2688 X^4 - 128 X^2 + X + 1
+      \end{align*}
+      is $\cos \frac {\pi} {17}$.
+
+    \answer Unfortunately, no, by Wantzel's theorem.
+
+  \end{answers}
+
+\end{solution}
+
+\end{document}
