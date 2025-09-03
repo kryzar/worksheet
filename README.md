@@ -25,7 +25,7 @@ my_worksheet.SOLUTIONS.pdf
 
 > [!NOTE]  
 > Compilation happens in a single working directory in `/tmp` dedicated solely
-> to the input file. That, and with the use of `latexmk`, the file is compiled
+> to the input file. With that, and the use of `latexmk`, the file is compiled
 > only if it has been modified.
 
 > [!WARNING]  
